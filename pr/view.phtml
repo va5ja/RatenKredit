@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Offers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-style: italic;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Ratenkredit</h2>
+
+<form>
+    <input type="text" name="amount" value="<?=@$_GET['amount'] ?>" placeholder="$100">
+    <input type="submit" name="submit" value="Check" />
+</form>
+
+<?php if (isset($offers)): ?>
+
+<table border="2">
+    <tr>
+        <th colspan="4">Offers</th>
+    </tr>
+    <?php foreach ($offers as $provider => $offer) { ?>
+    <tr>
+        <td><?= $provider ?></td>
+        <td><?php if (($provider) == 'ing-diba') echo $offer['zinsen']; else { echo $offers[$provider]['Interest']; } ?>%</td>
+        <td><?php if ($provider == 'ing-diba') echo $offer['duration']; else { echo $offer['Terms']['Duration']; } ?> month</td>
+    </tr>
+    <?php } ?>
+</body>
+
+<?php endif ?>
+</html>

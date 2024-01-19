@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+main {
+    min-height: 360px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-style: italic;
+}
+th {
+    background-color: #f2f2f2;
+    color: green;
+}
+
+.b-offer-form {
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 220px;
+}
+
+.b-offer-form .row {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.b-offer-form .row .input,
+.b-offer-form .row .currency-input {
+    width: 85px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.b-offer-form .row .input::placeholder,
+.b-offer-form .row .currency-input::placeholder {
+    color: #bbb;
+}
+
+.b-offer-form .row .currency-input {
+    width: 73px;
+    padding-left: 14px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1'><text x='2' y='16' fill='black' font-size='16' font-family='arial'>$</text></svg>");
+    background-repeat: no-repeat;
+}
+
+.b-offer-form .row .error {
+    margin: 4px 0;
+    color: red;
+    line-height: unset;
+    font-size: 14px;
+}
+
+.b-offer-form .button {
+    border-radius: 4px;
+    border: 2px solid #00dd00;
+    padding: 6px;
+    background-color: #ccffcc;
+}
+
+.b-offer-form .button:hover,
+.b-offer-form .button:focus {
+    background-color: #90ff90;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.b-offer-form .button.loading:after {
+    content: '↻';
+    animation: spin 800ms infinite linear;
+    display: inline-block;
+    margin-left: 6px;
+}
