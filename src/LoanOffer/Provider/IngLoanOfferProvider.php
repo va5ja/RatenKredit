@@ -18,11 +18,15 @@ class IngLoanOfferProvider extends AbstractLoanOfferProvider
 
     protected function getClientResponse(int $amount, ?int $months): ResponseInterface
     {
-        return $this->client->request('GET', self::URL . $amount, [
-            'headers' => [
-                'X-Access-Key' => '$2a$10$NH1p52EaThQFAUbsMloZ.ObhsAsdBC77RJROzFiJ7OUc52oBIn5DS',
-            ],
-        ]);
+        return $this->client->request(
+            method: 'GET',
+            url: self::URL . $amount,
+            options: [
+                'headers' => [
+                    'X-Access-Key' => '$2a$10$NH1p52EaThQFAUbsMloZ.ObhsAsdBC77RJROzFiJ7OUc52oBIn5DS',
+                ],
+            ]
+        );
     }
 
     /**
