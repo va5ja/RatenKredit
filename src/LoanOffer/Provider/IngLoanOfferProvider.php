@@ -9,7 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class IngLoanOfferProvider extends AbstractLoanOfferProvider
 {
-    private const URL = 'https://api.jsonbin.io/v3/b/65a6e50e266cfc3fde79aa14?meta=false&amount=';
+    public const URL = 'https://api.jsonbin.io/v3/b/65a6e50e266cfc3fde79aa14?meta=false&amount=';
 
     public static function getName(): string
     {

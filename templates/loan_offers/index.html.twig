@@ -10,12 +10,12 @@
 <form method="get" action="{{ path('app_offers') }}" class="b-offer-form" onsubmit="document.getElementById('submit-button').classList.add('loading');">
     <div class="row">
         <label for="amount" class="label">Amount</label>
-        <input id="amount" class="currency-input" type="number" name="amount" min="1" value="{{ amount }}" placeholder="100" required />
+        <input id="amount" class="currency-input" type="number" name="amount" min="1" value="{% if amount %}{{ amount }}{% endif %}" placeholder="100" required />
         {% if errors.amount is defined %}<p class="error">❌ {{ errors.amount }}</p>{% endif %}
     </div>
     <div class="row">
         <label for="months" class="label">Months</label>
-        <input id="months" class="input" type="number" name="months" min="1" value="{{ months }}" placeholder="3" />
+        <input id="months" class="input" type="number" name="months" min="1" value="{% if months %}{{ months }}{% endif %}" placeholder="3" />
         {% if errors.months is defined %}<p class="error">❌ {{ errors.months }}</p>{% endif %}
     </div>
     <button id="submit-button" type="submit" class="button">Check</button>

@@ -238,6 +238,8 @@ To start the app you can simply run:
 > symfony server:start
 ```
 
+You should browse to `https://localhost:8000/loan-offers` (depends on local settings) to see the app in action.
+
 For running tests you can use:
 ```shell
 > bin/phpunit

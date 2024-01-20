@@ -10,7 +10,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class SmavaLoanOfferProvider extends AbstractLoanOfferProvider
 {
-    private const URL = 'https://api.jsonbin.io/v3/b/65a6e71e1f5677401f1ebd2c?meta=false';
+    public const URL = 'https://api.jsonbin.io/v3/b/65a6e71e1f5677401f1ebd2c?meta=false';
 
     public static function getName(): string
     {

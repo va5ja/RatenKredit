@@ -26,3 +26,6 @@ services:
     _instanceof:
         App\LoanOffer\Provider\LoanOfferProviderInterface:
             tags: ['app.loan_offer_provider']
+
+    App\Tests\MockClientCallback: ~
+
