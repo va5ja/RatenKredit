@@ -28,7 +28,7 @@ class LoanOffersFunctionalTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextSame('h1', '💰 Installment Loan');
         $this->assertSelectorExists('table');
-        $this->assertCount(3, $crawler->filter('tr'));
+        $this->assertCount(4, $crawler->filter('tr'));
     }
 
     public function testSuccessfulResponseWithParametersAndUnavailableProvider(): void
@@ -40,7 +40,7 @@ class LoanOffersFunctionalTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextSame('h1', '💰 Installment Loan');
         $this->assertSelectorExists('table');
-        $this->assertCount(3, $crawler->filter('tr'));
+        $this->assertCount(4, $crawler->filter('tr'));
         $this->assertSelectorTextSame('td', 'Ing (currently unavailable)');
     }
 }

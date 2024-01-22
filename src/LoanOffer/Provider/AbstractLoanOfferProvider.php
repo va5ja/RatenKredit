@@ -40,7 +40,7 @@ abstract class AbstractLoanOfferProvider implements LoanOfferProviderInterface
                 $conditions = $this->extractConditions($this->getClientResponse($amount, $months));
                 $conditions = $this->normalizeConditions($conditions);
             } catch (CouldNotGetLoanOffer $e) {
-                $this->logger->error($e->getMessage(), ['exception' => $e]);
+                $this->logger->error($e->getMessage(), ['exception' => $e->getPrevious()]);
 
                 return new LoanOfferResponse(providerName: static::getName(), requestSuccessful: false);
             }

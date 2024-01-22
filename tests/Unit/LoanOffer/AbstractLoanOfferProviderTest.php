@@ -49,7 +49,7 @@ class AbstractLoanOfferProviderTest extends TestCase
             ->method('getStatusCode')
             ->willThrowException(new TransportException('Network error'));
 
-        $loanOfferProvider = new class ($this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
+        $loanOfferProvider = new class ('abc123', $this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
             public static function getName(): string
             {
                 return 'EvilCorp';
@@ -82,7 +82,7 @@ class AbstractLoanOfferProviderTest extends TestCase
             ->method('getStatusCode')
             ->willReturn(Response::HTTP_INTERNAL_SERVER_ERROR);
 
-        $loanOfferProvider = new class ($this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
+        $loanOfferProvider = new class ('abc123', $this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
             public static function getName(): string
             {
                 return 'EvilCorp';
@@ -119,7 +119,7 @@ class AbstractLoanOfferProviderTest extends TestCase
             ->method('toArray')
             ->willThrowException(new TransportException('Network error'));
 
-        $loanOfferProvider = new class ($this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
+        $loanOfferProvider = new class ('abc123', $this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
             public static function getName(): string
             {
                 return 'EvilCorp';
@@ -156,7 +156,7 @@ class AbstractLoanOfferProviderTest extends TestCase
             ->method('toArray')
             ->willThrowException(new JsonException());
 
-        $loanOfferProvider = new class ($this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
+        $loanOfferProvider = new class ('abc123', $this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
             public static function getName(): string
             {
                 return 'EvilCorp';
@@ -193,7 +193,7 @@ class AbstractLoanOfferProviderTest extends TestCase
             ->method('toArray')
             ->willReturn(['interest_rate' => 1.5, 'months' => 12]);
 
-        $loanOfferProvider = new class ($this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
+        $loanOfferProvider = new class ('abc123', $this->client, $this->cache, $this->logger) extends AbstractLoanOfferProvider {
             public static function getName(): string
             {
                 return 'EvilCorp';
