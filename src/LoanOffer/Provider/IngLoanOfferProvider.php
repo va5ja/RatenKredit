@@ -23,7 +23,7 @@ class IngLoanOfferProvider extends AbstractLoanOfferProvider
             url: self::URL . $amount,
             options: [
                 'headers' => [
-                    'X-Access-Key' => '$2a$10$NH1p52EaThQFAUbsMloZ.ObhsAsdBC77RJROzFiJ7OUc52oBIn5DS',
+                    'X-Access-Key' => $this->accessKey,
                 ],
             ]
         );

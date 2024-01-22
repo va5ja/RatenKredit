@@ -2,21 +2,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
+
 main {
     min-height: 360px;
 }
-table {
+
+footer {
+    margin-top: 40px;
+}
+
+.b-offer {
     width: 100%;
     border-collapse: collapse;
     margin-top: 40px;
 }
-th, td {
+
+.b-offer .col {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
     font-style: italic;
 }
-th {
+
+.b-offer .col.header {
     background-color: #f2f2f2;
     color: green;
 }

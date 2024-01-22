@@ -27,5 +27,13 @@ services:
         App\LoanOffer\Provider\LoanOfferProviderInterface:
             tags: ['app.loan_offer_provider']
 
+    App\LoanOffer\Provider\IngLoanOfferProvider:
+        arguments:
+            $accessKey: '%env(string:JSONBIN_ACCESS_KEY)%'
+
+    App\LoanOffer\Provider\SmavaLoanOfferProvider:
+        arguments:
+            $accessKey: '%env(string:JSONBIN_ACCESS_KEY)%'
+
     App\Tests\MockClientCallback: ~
 

@@ -24,18 +24,23 @@
 {% if offers%}
 <table class="b-offer">
     <tr>
-        <th colspan="3">Offers</th>
+        <th class="col header" colspan="3">Installment Loan Offers</th>
+    </tr>
+    <tr>
+        <th class="col header">Provider</th>
+        <th class="col header">Interest rate</th>
+        <th class="col header">Term</th>
     </tr>
     {% for offer in offers %}
         {% if offer.requestSuccessful %}
         <tr>
-            <td>{{ offer.providerName }}</td>
-            <td>{{ offer.interestRate }} %</td>
-            <td>{{ offer.months }} month(s)</td>
+            <td class="col">{{ offer.providerName }}</td>
+            <td class="col">{{ offer.interestRate }} %</td>
+            <td class="col">{{ offer.months }} month(s)</td>
         </tr>
         {% else %}
         <tr>
-            <td colspan="3">{{ offer.providerName }} (currently unavailable)</td>
+            <td class="col" colspan="3">{{ offer.providerName }} (currently unavailable)</td>
         </tr>
         {% endif %}
     {% endfor %}

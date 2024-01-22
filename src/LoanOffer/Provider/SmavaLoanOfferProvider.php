@@ -24,7 +24,7 @@ class SmavaLoanOfferProvider extends AbstractLoanOfferProvider
             url: self::URL,
             options: [
                 'headers' => [
-                    'X-Access-Key' => '$2a$10$NH1p52EaThQFAUbsMloZ.ObhsAsdBC77RJROzFiJ7OUc52oBIn5DS',
+                    'X-Access-Key' => $this->accessKey,
                 ],
             ]
         );
@@ -40,8 +40,10 @@ class SmavaLoanOfferProvider extends AbstractLoanOfferProvider
             throw CouldNotGetLoanOffer::normalizationFailed(self::getName());
         }
 
+        // parse e.g. string "3,5%" to float 3.5
         $interestRate = (new NumberFormatter(locale: 'de_DE', style: NumberFormatter::DECIMAL))
             ->parse($conditions['Interest']);
+        // calculate the number of months from a string like "2 years 4 months"
         $interval = \DateInterval::createFromDateString($conditions['Terms']['Duration']);
 
         return [

@@ -21,6 +21,7 @@ abstract class AbstractLoanOfferProvider implements LoanOfferProviderInterface
     protected const PREFIX_CACHE_ITEM = 'loan_offer_';
 
     public function __construct(
+        protected string $accessKey,
         protected HttpClientInterface $client,
         protected CacheItemPoolInterface $cache,
         protected LoggerInterface $logger
